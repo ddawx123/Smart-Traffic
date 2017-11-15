@@ -1,0 +1,22 @@
+{
+    "app_name":"绍兴市智慧交通可视化平台",
+    "app_version":"1.0",
+    "apisrv":"220.191.224.89",
+    "apissl":"false",
+    "mysqlhost":"sqld.localdomain.org:3306",
+    "mysqluser":"root",
+    "mysqlpswd":"123456",
+    "mysqldbid":"SmartTraffic",
+    "salt":"1x4j91nu",
+    "apiList":{
+        "AllRoad":"/wx/data.php?t=dlzs",
+        "Area":"/wx/data.php?t=xzqy",
+        "OneLoopLine":"/wx/image.php?t=sszs",
+        "HotArea":"/wx/data.php?t=rdqy"
+    },
+    "SSO":{
+        "server_address":"cas.dingstudio.cn",
+        "server_port":80,
+        "server_path":"cas"
+    }
+}

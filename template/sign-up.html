@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户注册-<?php echo APP_NAME; ?></title>
+    <meta name="description" content="<?php echo APP_NAME; ?>-用户注册">
+    <meta name="keywords" content="<?php echo APP_NAME; ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="static/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="static/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="<?php echo APP_NAME; ?>" />
+    <link rel="stylesheet" href="static/css/amazeui.min.css" />
+    <link rel="stylesheet" href="static/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="static/css/app.css">
+    <script src="static/js/jquery.min.js"></script>
+
+</head>
+
+<body data-type="login">
+    <script src="static/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-toggle am-icon-cog">
+            </div>
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-title">
+                    选择主题
+                </div>
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+        <div class="tpl-login">
+            <div class="tpl-login-content">
+                <div class="tpl-login-title">注册用户</div>
+                <span class="tpl-login-content-info">
+                  创建一个新的用户
+              </span>
+                <form class="am-form tpl-form-line-form" method="post" action="./index.php?c=postRegister">
+                    <div class="am-form-group">
+                        <input type="text" class="tpl-form-input" id="mail" name="mail" placeholder="键入密保邮箱">
+                    </div>
+                    <div class="am-form-group">
+                        <input type="text" class="tpl-form-input" id="user" name="user" placeholder="请输入账号">
+                    </div>
+                    <div class="am-form-group">
+                        <input type="password" class="tpl-form-input" id="pswd" name="pswd" placeholder="请输入密码">
+                    </div>
+                    <div class="am-form-group tpl-login-remember-me">
+                        温馨提示：<br>如果您有站群账户，则可以不再继续注册。<br><a href="./index.php?c=CASLogin" target="_self">点击此处</a>快速使用CAS系统登录！
+                    </div>
+                    <div class="am-form-group">
+                        <button type="submit" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">立即注册</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/amazeui.min.js"></script>
+    <script src="static/js/vendor.js"></script>
+
+</body>
+
+</html>

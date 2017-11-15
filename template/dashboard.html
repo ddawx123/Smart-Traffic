@@ -1,0 +1,203 @@
+<html lang="en" class="js cssanimations">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php echo APP_NAME; ?></title>
+    <meta name="description" content="<?php echo APP_NAME; ?>-可视化面板">
+    <meta name="keywords" content="<?php echo APP_NAME; ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="icon" type="image/png" href="static/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="static/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="<?php echo APP_NAME; ?>">
+    <script src="static/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="static/css/amazeui.min.css">
+    <link rel="stylesheet" href="static/css/amazeui.datatables.min.css">
+    <link rel="stylesheet" href="static/css/app.css">
+    <script src="static/js/jquery.min.js"></script>
+</head>
+<body data-type="index" class="theme-white">
+    <script src="static/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-toggle"></div>
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-title">选择主题</div>
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;">
+                    <img src="static/img/logo.png" alt="">
+                </a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 其它功能-->
+                <div class="am-fr tpl-header-navbar">
+                    <ul>
+                        <li class="am-text-sm">
+                            <a href="./index.php?c=Index"><?php echo APP_NAME; ?></a>
+                        </li>
+                        <!-- 退出 -->
+                        <li class="am-text-sm">
+                            <a href="<?php echo $_SESSION['logoutUrl']; ?>">
+                                <span class="am-icon-sign-out">退出</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <div>
+            <div class="row-content am-cf">
+                <div class="row  am-cf">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">全城平均拥堵指数</div>
+                                <div class="widget-function am-fr">
+                                    <small><a href="javascript:;" class="am-icon-cog" onclick="executeAverageSpeed()">重新计算</a></small>
+                                </div>
+                            </div>
+                            <div class="widget-body am-fr">
+                                <div class="am-fl">
+                                    <div class="widget-fluctuation-description-text am-text-right">一环线内平均拥堵指数</div>
+                                    <div class="widget-fluctuation-description-amount text-success" id="onelooptpi">0.0</div>
+                                </div>
+                                <div class="am-fr am-cf">
+                                    <div class="widget-fluctuation-description-text am-text-right">热点区域平均拥堵指数</div>
+                                    <div class="widget-fluctuation-description-amount text-success" id="hotareatpi">0.0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                        <div class="widget widget-primary am-cf">
+                            <div class="widget-statistic-header">
+                                主城区总体道路状况
+                            </div>
+                            <div class="widget-statistic-body">
+                                <div class="widget-statistic-value" id="mainStatusText">未知</div>
+                                <div class="widget-statistic-description">
+                                    预计通行高峰将在：
+                                    <strong>正在收集数据</strong>&nbsp;后开始
+                                </div>
+                                <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                        <div class="widget widget-purple am-cf">
+                            <div class="widget-statistic-header">
+                                主城各片区平均通行速度（单位：Km/h）
+                            </div>
+                            <div class="widget-body am-fr">
+                                    <div class="am-fl">
+                                        <div class="widget-fluctuation-description-text am-text-right">主城区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                        <div class="widget-fluctuation-description-amount text-success" id="zcq">
+                                            0.0
+                                        </div>
+                                    </div>
+                                    <div class="am-fl">
+                                        <div class="widget-fluctuation-description-text am-text-right">袍江新区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                        <div class="widget-fluctuation-description-amount text-success" id="pjxq">0.0</div>
+                                    </div>
+                                    <div class="am-fr am-cf">
+                                        <div class="widget-fluctuation-description-text am-text-right">镜湖新区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                        <div class="widget-fluctuation-description-amount text-success" id="jhxq">0.0</div>
+                                    </div>
+                                    <div class="am-fr am-cf">
+                                        <div class="widget-fluctuation-description-text am-text-right">城东高新区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                        <div class="widget-fluctuation-description-amount text-success" id="cdgxq">0.0</div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row am-cf">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-4 widget-margin-bottom-lg ">
+                        <div class="tpl-user-card am-text-center widget-body-lg">
+                            <div class="tpl-user-card-title">
+                                <?php echo @$_SESSION['user']; ?>
+                            </div>
+                            <div class="achievement-subheading">
+                                欢迎您
+                            </div>
+                            <img class="achievement-image" src="static/img/user07.png" alt="">
+                            <div class="achievement-description">登录时间：<strong><?php echo @$_SESSION['logintime']; ?></strong></div>
+                        </div>
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 widget-margin-bottom-lg">
+
+                        <div class="widget am-cf widget-body-lg">
+
+                            <div class="widget-body  am-fr">
+                                <div class="am-scrollable-horizontal ">
+                                    <div id="example-r_wrapper" class="dataTables_wrapper am-datatable am-form-inline dt-amazeui no-footer">
+                                        <table width="100%" class="am-table am-table-compact am-text-nowrap tpl-table-black  dataTable no-footer"
+                                            id="example-r" role="grid" style="width: 100%;">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="example-r" rowspan="1"
+                                                        colspan="1" aria-sort="ascending" aria-label="文章标题: 以降序排列此列" style="width: 363px;">道路名称</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example-r" rowspan="1"
+                                                        colspan="1" aria-label="作者: 以升序排列此列" style="width: 84px;">拥堵指数</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example-r" rowspan="1"
+                                                        colspan="1" aria-label="时间: 以升序排列此列" style="width: 72px;">拥堵级别</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example-r" rowspan="1"
+                                                        colspan="1" aria-label="操作: 以升序排列此列" style="width: 107px;">平均速度</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="AllRoad">
+                                                <!-- more data -->
+                                                <tr class="even gradeC odd" role="row">
+                                                    <td class="sorting_1">未知道路</td>
+                                                    <td>0.0</td>
+                                                    <td>暂无拥堵</td>
+                                                    <td>0KM/h</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        此处仅显示排名前5拥堵榜的道路，如需查看所有数据请<a href="./index.php?c=AllRoad" target="_self">点击此处</a>。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <center><small style="color: #FFA500"><?php echo APP_NAME." V".APP_VER; ?> &copy; DingStudio Technology</small></center>
+    <script src="static/js/amazeui.min.js"></script>
+    <script src="static/js/amazeui.datatables.min.js"></script>
+    <script src="static/js/dataTables.responsive.min.js"></script>
+    <script src="static/js/vendor.js"></script>
+    <script src="static/js/app.js"></script>
+    <script>
+        loadAllRoadData(5);
+        loadCitySubAreaData();
+        executeAverageSpeed();
+        loadHotAreaData();
+        var autoRefresh = window.setInterval(function(){
+            loadAllRoadData(5);
+            loadCitySubAreaData();
+            executeAverageSpeed();
+            loadHotAreaData();
+        },10000);
+    </script>
+</body>
+</html>
