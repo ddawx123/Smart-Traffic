@@ -15,4 +15,4 @@
 
 本系统仍然处于开发过程，如有Bug或建议，欢迎通过Issues反馈。
 
-## &copy; 2012-2017 DingStudio Technology All Rights Reserved (Author: David Ding [alone◎浅忆])
+## &copy; 2012-2017 <a href="http://www.dingstudio.cn" target="_blank">DingStudio</a> Technology All Rights Reserved (Author: <a href="http://954759397.qzone.qq.com" target="_blank">David Ding [alone◎浅忆]</a>)
