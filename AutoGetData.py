@@ -7,13 +7,7 @@ import time
 import datetime
 import sqlite3
 
-first_warn = input("是否初始化数据库表？如果您已有数据，请不要执行此操作。输入y继续，n取消！")
-if (first_warn == "y"):
-    initDB()
-elif (first_warn == "n"):
-    main()
-else:
-    exit()
+
     
 
 def getData():
@@ -27,7 +21,7 @@ def initDB():
     sqlconn = sqlite3.connect('test.db')
     c = sqlconn.cursor()
     c.execute('CREATE TABLE speed (\
-                id int auto_increment not null primary key,\
+                id int auto_increment primary key,\
                 name text not null,\
                 speed int not null,\
                 tpi int not null,\
@@ -46,18 +40,24 @@ def Main():
         reqtime = time.strftime("%Y%m%d%H%M%S",time.localtime(time.time()))
         sqlconn = sqlite3.connect('test.db')
         c = sqlconn.cursor()
-        c.execute('CREATE TABLE speed (\
-                    id int auto_increment not null primary key,\
-                    name text not null,\
-                    speed int not null,\
-                    tpi int not null,\
-                    intro text not null)')
         fullspeed = 0
-        for speed in data:
-            #print(speed["speed"])
-            fullspeed = fullspeed + speed["speed"]
+        for newdata in data:
+            #print(newdata["speed"])
+            c.execute('INSERT INTO speed (name,speed,tpi,intro) VALUES ("' + newdata["name"] + '","' + str(newdata["speed"]) + '","' + str(newdata["tpi"]) + '","' + newdata["grade"] + '")')
+            fullspeed = fullspeed + newdata["speed"]
         print("平均速度：" + str(int(fullspeed / len(data))) + " Km/h")
+        input()
+        exit()
     else:
         print("\n用户已取消操作！按任意键退出。");
         input()
         exit()
+
+
+first_warn = input("是否初始化数据库表？如果您已有数据，请不要执行此操作。输入y继续，n取消！")
+if (first_warn == "y"):
+    initDB()
+elif (first_warn == "n"):
+    Main()
+else:
+    exit()

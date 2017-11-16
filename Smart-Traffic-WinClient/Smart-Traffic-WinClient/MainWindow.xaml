@@ -1,0 +1,12 @@
+﻿<Window x:Class="Smart_Traffic_WinClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Smart_Traffic_WinClient"
+        mc:Ignorable="d"
+        Title="Smart Traffic User Platform" Height="350" Width="525" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
+    <Grid>
+        <WebBrowser x:Name="webview_0"/>
+    </Grid>
+</Window>

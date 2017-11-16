@@ -1,0 +1,12 @@
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\bin\Debug\Smart-Traffic-WinClient.exe
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\bin\Debug\Smart-Traffic-WinClient.pdb
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\MainWindow.g.cs
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\App.g.cs
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\Smart-Traffic-WinClient_MarkupCompile.cache
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\Smart-Traffic-WinClient_MarkupCompile.lref
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\MainWindow.baml
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\Smart-Traffic-WinClient.g.resources
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\Smart_Traffic_WinClient.Properties.Resources.resources
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\Smart-Traffic-WinClient.csproj.GenerateResource.Cache
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\Smart-Traffic-WinClient.exe
+c:\users\owner\documents\visual studio 2017\Projects\Smart-Traffic-WinClient\Smart-Traffic-WinClient\obj\Debug\Smart-Traffic-WinClient.pdb

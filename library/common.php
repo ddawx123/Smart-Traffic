@@ -238,6 +238,9 @@ class Common {
             header('Content-Type: application/json; Charset=UTF-8');
             echo json_encode(json_decode(file_get_contents($SRV.$Service->HotArea)),JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
             break;
+            case "ApiSqlList":
+            echo json_decode(json_encode(dirname(__FILE__).'/data.json'));
+            break;
             default:
             header('Content-Type: text/plain; Charset=UTF-8');
             echo 'Error';
